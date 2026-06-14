@@ -1,28 +1,34 @@
-# Drift — website
+# Drift
 
-Static landing page and documentation for Drift, the live video wallpaper for Windows 11.
+A lightweight **live video wallpaper for Windows 11**. Drop in a video and it loops behind your desktop icons — sequence clips on a timeline and lay them out across every monitor.
 
-## Files
+**[⬇ Download for Windows](https://github.com/Stenbergcool/DRIFT/releases/latest/download/Drift_0.1.0_x64-setup.exe)** · **[Website](https://stenbergcool.github.io/DRIFT/)** · **[Documentation](https://stenbergcool.github.io/DRIFT/docs.html)**
 
-- `index.html` — landing page
-- `docs.html` — documentation
+Free, no account, no subscription.
 
-Both are fully self-contained (Tailwind, fonts and icons load from CDNs), so there's no build step.
+![Drift](assets/drift-app.png)
 
-## Hosting
+## Features
 
-Upload the `web-page` folder to any static host — GitHub Pages, Netlify, Cloudflare Pages, Vercel, or plain S3/nginx. `index.html` is the entry point. To preview locally, just open `index.html` in a browser, or run a tiny server:
+- **Any video, looped** — MP4 (H.264), WebM, or MOV, hardware-accelerated
+- **Behind your icons** — renders into the desktop's own wallpaper layer
+- **Multi-monitor** — play on every screen, or span one video across your whole layout
+- **Stays out of the way** — pauses automatically for full-screen apps and games, on battery, and on the lock screen
+- **Lives in the tray** — close the window and the wallpaper keeps running; optional launch at startup
+- **Audio toggle** — muted by default, with a volume slider when you want sound
 
-```powershell
-# from inside web-page/
-python -m http.server 8080
-# then visit http://localhost:8080
-```
+## Install
 
-## Before you go live — wire up the download link
+1. Download **[Drift_0.1.0_x64-setup.exe](https://github.com/Stenbergcool/DRIFT/releases/latest)** from the latest release.
+2. Run it. Installs just for your user — **no admin rights needed**.
+3. Pick a video, and your desktop comes alive.
 
-The site currently has no real installer URL. Search both HTML files for `TODO` and the `#download` / `#` placeholder hrefs on the **Download for Windows** buttons, and point them at your actual installer (for example a GitHub Releases `.exe` URL). There are three on the landing page (nav, hero, CTA) and the nav/Download button on the docs page links back to `index.html#download`.
+> **Heads up — Windows SmartScreen.** Drift isn't code-signed yet, so on first run Windows may show *"Windows protected your PC."* Click **More info → Run anyway**. The installer is the same file published here on GitHub.
 
-## Notes on accuracy
+## Requirements
 
-This site describes only what Drift actually does today: live video wallpapers, the three multi-monitor modes (Every screen / Span / Custom), the clip timeline, library, presets, audio/power settings and the tray. The version shown is `v0.1.0`. There is intentionally no mention of macOS, a CLI installer, cloud sync, audio-reactive shaders, widgets or keyboard shortcuts, since the app doesn't have those — update the copy if that changes.
+- Windows 11, 64-bit
+
+## Support
+
+Found a bug or have an idea? [Open an issue](https://github.com/Stenbergcool/DRIFT/issues).
