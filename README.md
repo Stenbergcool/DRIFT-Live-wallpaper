@@ -2,7 +2,7 @@
 
 A lightweight **live video wallpaper for Windows 11**. Drop in a video and it loops behind your desktop icons — sequence clips on a timeline and lay them out across every monitor.
 
-**[⬇ Download for Windows](https://github.com/Stenbergcool/DRIFT/releases/latest/download/Drift_0.1.0_x64-setup.exe)** · **[Website](https://stenbergcool.github.io/DRIFT/)** · **[Documentation](https://stenbergcool.github.io/DRIFT/docs.html)**
+**[⬇ Download for Windows](https://github.com/Stenbergcool/DRIFT-Live-wallpaper/releases/latest/download/Drift_0.1.0_x64-setup.exe)** · **[Website](https://stenbergcool.github.io/DRIFT-Live-wallpaper/)** · **[Documentation](https://stenbergcool.github.io/DRIFT-Live-wallpaper/docs.html)**
 
 Free, no account, no subscription.
 
@@ -19,7 +19,7 @@ Free, no account, no subscription.
 
 ## Install
 
-1. Download **[Drift_0.1.0_x64-setup.exe](https://github.com/Stenbergcool/DRIFT/releases/latest)** from the latest release.
+1. Download **[Drift_0.1.0_x64-setup.exe](https://github.com/Stenbergcool/DRIFT-Live-wallpaper/releases/latest)** from the latest release.
 2. Run it. Installs just for your user — **no admin rights needed**.
 3. Pick a video, and your desktop comes alive.
 
@@ -31,4 +31,4 @@ Free, no account, no subscription.
 
 ## Support
 
-Found a bug or have an idea? [Open an issue](https://github.com/Stenbergcool/DRIFT/issues).
+Found a bug or have an idea? [Open an issue](https://github.com/Stenbergcool/DRIFT-Live-wallpaper/issues).
