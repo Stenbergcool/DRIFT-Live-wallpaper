@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Drift — Live video wallpaper for Windows 11</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<meta name="description" content="Drift turns your own videos into a living desktop wallpaper. Sequence clips on a timeline, lay them out across every monitor, and let it pause itself when you game or unplug. Free, for Windows 11.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background": "#0c0c0e",
+          "surface": "#131316",
+          "surface-container": "#1a1a1e",
+          "surface-container-high": "#222228",
+          "surface-container-highest": "#2b2b32",
+          "on-surface": "#e8e8ec",
+          "on-surface-variant": "#a9a9b4",
+          "primary": "#a99bff",
+          "primary-deep": "#8B7CF6",
+          "secondary": "#7fb0ff",
+          "secondary-deep": "#5B8DEF",
+          "outline": "#3a3a44"
+        },
+        fontFamily: {
+          "display": ["Sora"],
+          "body": ["Inter"],
+          "mono": ["JetBrains Mono"]
+        }
+      }
+    }
+  };
+</script>
+<style>
+  body { background-color: #0c0c0e; color: #e8e8ec; }
+  .glass {
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .accent-gradient { background: linear-gradient(135deg, #8B7CF6 0%, #5B8DEF 100%); }
+  .text-grad {
+    background: linear-gradient(135deg, #a99bff 0%, #7fb0ff 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .glow { box-shadow: 0 0 40px rgba(139, 124, 246, 0.25); }
+  .mask-edge { -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="font-body antialiased overflow-x-hidden selection:bg-primary/30">
+
+<!-- Nav -->
+<nav class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-6xl rounded-full glass px-6 py-3 z-50 flex justify-between items-center">
+  <a href="#top" class="flex items-center gap-2.5">
+    <img src="assets/logo.png" width="28" height="28" alt="" class="rounded-lg" />
+    <span class="font-display font-extrabold tracking-tight text-lg">Drift</span>
+  </a>
+  <div class="hidden md:flex gap-9 items-center text-sm">
+    <a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#features">Features</a>
+    <a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#interface">Interface</a>
+    <a class="text-on-surface-variant hover:text-on-surface transition-colors" href="docs.html">Docs</a>
+  </div>
+  <a href="https://github.com/Stenbergcool/DRIFT/releases/latest/download/Drift_0.1.0_x64-setup.exe" class="accent-gradient text-white px-5 py-2 rounded-full text-sm font-semibold hover:brightness-110 active:scale-95 transition-all">
+    Download
+  </a>
+</nav>
+
+<!-- Hero -->
+<section id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-20 px-6">
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] max-w-full bg-primary-deep/20 blur-[150px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary-deep/15 blur-[150px] rounded-full"></div>
+  </div>
+  <div class="relative text-center max-w-4xl">
+    <span class="font-mono text-xs text-primary tracking-[0.35em] uppercase mb-6 block">Live wallpaper · Windows 11</span>
+    <h1 class="font-display font-medium text-7xl md:text-[150px] leading-none mb-8 text-white">DRIFT</h1>
+    <p class="font-display text-xl md:text-1xl text-on-surface-variant max-w-2xl mx-auto leading-snug">
+      Turn your own videos into a living desktop. Sequence clips on a timeline, lay them out across every monitor. Free, with no account and no subscription.
+    </p>
+    <div class="mt-11 flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="https://github.com/Stenbergcool/DRIFT/releases/latest/download/Drift_0.1.0_x64-setup.exe" class="accent-gradient px-9 py-4 rounded-xl font-semibold text-base hover:scale-105 active:scale-95 transition-all glow flex items-center gap-2">
+        <span class="material-symbols-outlined">download</span>
+        Download for Windows
+      </a>
+      <a href="docs.html" class="glass px-9 py-4 rounded-xl font-semibold text-base hover:bg-white/10 transition-all flex items-center gap-2">
+        <span class="material-symbols-outlined">menu_book</span>
+        Read the docs
+      </a>
+    </div>
+    <p class="mt-6 font-mono text-xs text-on-surface-variant/70 tracking-wider">WINDOWS 11 · 64-BIT · FREE · NO ACCOUNT</p>
+  </div>
+</section>
+
+<!-- Value prop -->
+<section class="py-28 px-6 bg-surface/40">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div class="relative">
+      <h2 class="font-display font-bold text-4xl md:text-5xl mb-6 tracking-tight">Beyond a static image.</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed mb-9">
+        A normal wallpaper just sits there. Drift plays your own video behind your icons — a single clip or a whole sequence — by attaching a muted player to the Windows desktop layer. Bring your own files; there's no account and nothing is uploaded.
+      </p>
+      <div class="space-y-5">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full glass flex items-center justify-center shrink-0 text-primary">
+            <span class="material-symbols-outlined">sports_esports</span>
+          </div>
+          <span class="text-base font-medium">Pauses automatically for full-screen apps and games</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full glass flex items-center justify-center shrink-0 text-secondary">
+            <span class="material-symbols-outlined">battery_charging_full</span>
+          </div>
+          <span class="text-base font-medium">Stops on battery to save power on laptops</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full glass flex items-center justify-center shrink-0 text-primary">
+            <span class="material-symbols-outlined">lock_open</span>
+          </div>
+          <span class="text-base font-medium">Local only — your videos and settings stay on your PC</span>
+        </div>
+      </div>
+    </div>
+    <div class="glass rounded-[32px] p-2 aspect-[4/3] relative overflow-hidden">
+      <div class="absolute inset-0 accent-gradient opacity-10"></div>
+      <div class="w-full h-full rounded-[24px] border border-white/10 overflow-hidden relative bg-background flex items-center justify-center">
+        <!-- Simple animated "drift" motif standing in for a video wallpaper -->
+        <svg viewBox="0 0 400 300" class="w-full h-full" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="wave" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8B7CF6"/><stop offset="1" stop-color="#5B8DEF"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="300" fill="#101014"/>
+          <g fill="none" stroke="url(#wave)" stroke-width="2">
+            <path opacity="0.25" d="M-20 120 C 80 60, 160 180, 260 120 S 440 60, 520 120"/>
+            <path opacity="0.45" d="M-20 160 C 80 100, 160 220, 260 160 S 440 100, 520 160"/>
+            <path opacity="0.7"  d="M-20 200 C 80 140, 160 260, 260 200 S 440 140, 520 200"/>
+          </g>
+          <circle cx="200" cy="150" r="180" fill="url(#wave)" opacity="0.06"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-16 text-center">
+      <h2 class="font-display font-bold text-4xl md:text-5xl mb-4 tracking-tight">Built for control.</h2>
+      <p class="text-on-surface-variant text-lg">Everything you'd want from a wallpaper engine, nothing you wouldn't.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Multi-monitor -->
+      <div class="glass p-8 rounded-[28px] flex flex-col h-full hover:border-primary/40 transition-colors">
+        <span class="material-symbols-outlined text-3xl text-primary mb-5">desktop_windows</span>
+        <h3 class="text-2xl font-bold mb-3">Multi-monitor modes</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-6">
+          Mirror one video on every screen, stretch a single video across them all, or use the visual layout editor to crop a different region of the video to each monitor.
+        </p>
+        <div class="mt-auto flex gap-2">
+          <span class="flex-1 text-center text-xs font-mono py-2 rounded-lg bg-white/5 border border-white/10">Every screen</span>
+          <span class="flex-1 text-center text-xs font-mono py-2 rounded-lg bg-white/5 border border-white/10">Span</span>
+          <span class="flex-1 text-center text-xs font-mono py-2 rounded-lg accent-gradient text-white">Custom</span>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="glass p-8 rounded-[28px] flex flex-col h-full hover:border-secondary/40 transition-colors">
+        <span class="material-symbols-outlined text-3xl text-secondary mb-5">view_timeline</span>
+        <h3 class="text-2xl font-bold mb-3">Clip timeline</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-6">
+          Sequence several clips with per-clip loop counts, timed holds, and cut or crossfade transitions. Group clips together to repeat a whole run.
+        </p>
+        <div class="mt-auto flex gap-3 mask-edge">
+          <div class="min-w-[90px] h-20 rounded-xl bg-surface-container-high border border-white/10 p-2 flex flex-col justify-between">
+            <div class="h-9 w-full bg-white/5 rounded-md"></div>
+            <div class="h-1.5 w-full accent-gradient rounded-full"></div>
+          </div>
+          <div class="min-w-[90px] h-20 rounded-xl bg-surface-container-high border border-white/10 p-2 flex flex-col justify-between">
+            <div class="h-9 w-full bg-white/5 rounded-md"></div>
+            <div class="h-1.5 w-1/2 bg-on-surface-variant rounded-full"></div>
+          </div>
+          <div class="min-w-[90px] h-20 rounded-xl bg-surface-container-high border border-white/10 p-2">
+            <div class="h-9 w-full bg-white/5 rounded-md"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Library & presets -->
+      <div class="glass p-8 rounded-[28px] flex flex-col h-full hover:border-primary/40 transition-colors">
+        <span class="material-symbols-outlined text-3xl text-primary mb-5">grid_view</span>
+        <h3 class="text-2xl font-bold mb-3">Library &amp; presets</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-6">
+          Save videos into Drift's own library so they're always on hand, and store whole compositions — timeline plus display layout — as named presets you can switch between in a click.
+        </p>
+        <div class="mt-auto grid grid-cols-3 gap-2">
+          <div class="aspect-video rounded-lg bg-white/5 border border-white/10"></div>
+          <div class="aspect-video rounded-lg bg-white/5 border border-white/10"></div>
+          <div class="aspect-video rounded-lg accent-gradient opacity-80"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wide: lightweight -->
+    <div class="glass rounded-[28px] p-8 md:p-10 mt-6 grid md:grid-cols-[1fr_auto] gap-8 items-center">
+      <div>
+        <span class="material-symbols-outlined text-3xl text-secondary mb-4 block">bolt</span>
+        <h3 class="text-2xl font-bold mb-3">Light by design</h3>
+        <p class="text-on-surface-variant leading-relaxed max-w-2xl">
+          Drift is a small Tauri app that leans on your system's native video playback rather than a heavy game engine. It's muted by default, lives in the system tray, can launch quietly at startup, and pauses itself when something full-screen is running or you're on battery — so it stays out of the way when you need the machine.
+        </p>
+      </div>
+      <div class="flex md:flex-col gap-3 shrink-0">
+        <div class="glass rounded-2xl px-5 py-3 text-center">
+          <div class="font-mono text-[11px] text-on-surface-variant tracking-wider mb-0.5">RUNS FROM</div>
+          <div class="font-semibold">System tray</div>
+        </div>
+        <div class="glass rounded-2xl px-5 py-3 text-center">
+          <div class="font-mono text-[11px] text-on-surface-variant tracking-wider mb-0.5">AUDIO</div>
+          <div class="font-semibold">Muted by default</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interface preview -->
+<section id="interface" class="py-28 px-6 bg-surface/40">
+  <div class="max-w-5xl mx-auto text-center mb-14">
+    <h2 class="font-display font-bold text-4xl md:text-5xl mb-4 tracking-tight">A calm place to set it up.</h2>
+    <p class="text-on-surface-variant text-lg">A dark, glassy control window — timeline and displays on one screen, settings a click away.</p>
+  </div>
+  <div class="relative max-w-5xl mx-auto">
+    <div class="absolute inset-0 bg-primary-deep/20 blur-[120px] -z-10"></div>
+    <!-- Real screenshot of the Drift app. Save your printscreen as web-page/assets/drift-app.png -->
+    <div class="glass rounded-[20px] shadow-2xl overflow-hidden border border-white/15 p-1.5">
+      <img src="assets/drift-app.png" alt="The Drift app: a clip timeline, the custom multi-monitor display editor, and per-clip loop and transition settings."
+           class="w-full h-auto rounded-[14px] block" />
+    </div>
+  </div>
+</section>
+
+<!-- Download / CTA -->
+<section id="download" class="py-32 px-6 text-center">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="font-display font-bold text-4xl md:text-5xl mb-6 tracking-tight">Make your desktop move.</h2>
+    <p class="text-on-surface-variant text-lg mb-10">Free, with no account and no subscription. Drift installs just for your user — no admin rights needed.</p>
+    <a href="https://github.com/Stenbergcool/DRIFT/releases/latest/download/Drift_0.1.0_x64-setup.exe" class="accent-gradient inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base hover:scale-105 transition-all glow">
+      <span class="material-symbols-outlined">download</span>
+      Download for Windows
+    </a>
+    <p class="mt-6 font-mono text-xs text-on-surface-variant/70 tracking-wider">WINDOWS 11 · 64-BIT · v0.1.0</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 px-6 border-t border-white/5">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-6xl mx-auto">
+    <div class="flex items-center gap-2.5">
+      <img src="assets/logo.png" width="24" height="24" alt="" class="rounded-lg" />
+      <span class="font-display font-bold">Drift</span>
+    </div>
+    <div class="flex gap-7 text-sm font-mono text-on-surface-variant">
+      <a class="hover:text-primary transition-colors" href="docs.html">Docs</a>
+      <a class="hover:text-primary transition-colors" href="#features">Features</a>
+      <a class="hover:text-primary transition-colors" href="#download">Download</a>
+    </div>
+    <div class="font-mono text-xs text-on-surface-variant/70">© 2026 Drift · Live wallpaper for Windows 11</div>
+  </div>
+</footer>
+
+</body>
+</html>
