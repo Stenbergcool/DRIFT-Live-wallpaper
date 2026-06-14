@@ -32,3 +32,6 @@ Free, no account, no subscription.
 ## Support
 
 Found a bug or have an idea? [Open an issue](https://github.com/Stenbergcool/DRIFT-Live-wallpaper/issues).
+
+## PS
+This is pure AI slop
